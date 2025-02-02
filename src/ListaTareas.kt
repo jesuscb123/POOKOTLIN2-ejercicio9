@@ -1,5 +1,5 @@
 class ListaTareas() {
-    val listaTareas = mutableSetOf<Tarea>()
+    val listaTareas = mutableListOf<Tarea>()
 
 
     fun agregarTarea(tareaParaAgregar: Tarea): Boolean {
@@ -11,10 +11,11 @@ class ListaTareas() {
                     return false
                 }else{
                     listaTareas.add(tareaParaAgregar)
+                    return true
                 }
             }
         }
-        return true
+       return true
     }
     fun cambiarEstado(idTarea: String, estado: String): Boolean{
         for (tarea in listaTareas){
