@@ -35,7 +35,7 @@ fun pedirOpcion(msj: String, opcionesMax: Int): Int{
     while (!opcionCorrecta){
         try {
             print(msj)
-            opcion = readln().toInt()
+            opcion = readln().trim().toInt()
             if (opcion !in 1..opcionesMax) {throw IllegalArgumentException("Error, introduce una opción disponible.")}
             opcionCorrecta = true
         }catch (e: NumberFormatException){
@@ -50,9 +50,9 @@ fun pedirOpcion(msj: String, opcionesMax: Int): Int{
 
 fun agregarTarea(listaTareas: ListaTareas){
     print("Introduzca un identificador para la tarea: ")
-    val identificadorTarea = readln()
+    val identificadorTarea = readln().trim()
     print("Introduzca una descripción de la tarea a realizar: ")
-    val descripcionTarea = readln()
+    val descripcionTarea = readln().trim()
     val tareanueva = Tarea(identificadorTarea, descripcionTarea)
     if(listaTareas.agregarTarea(tareanueva)){
         println("La tarea con id ${tareanueva.idTarea} se ha agregado correctamente.")
